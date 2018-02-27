@@ -14,7 +14,7 @@ UXTerm*cursorColor: #d0dadd
 URxvt*borderColor:  [100]#16161b
 URxvt*scrollBar:    false
 
-! font
+
 URxvt.font: xft:Droid Sans Mono for Powerline:pixelsize=16:antialias=true:hinting=true
 URxvt.boldFont: xft:Droid Sans Mono for Powerline:bold:pixelsize=16:antialias=true:hinting=true
 URxvt.italicFont: xft:Droid Sans Mono for Powerline:italic:pixelsize=16:antialias=true:hinting=true
@@ -28,6 +28,8 @@ URxvt.perl-ext-common: fullscreen
 *color0:  #16161b
 *.color1: #9E8D73
 *color1:  #9E8D73
+*.color9: #d82929
+*color9:  #d82929
 *.color2: #5B7689
 *color2:  #5B7689
 *.color3: #728C9A
@@ -42,8 +44,8 @@ URxvt.perl-ext-common: fullscreen
 *color7:  #d0dadd
 *.color8: #91989a
 *color8:  #91989a
-*.color9: #9E8D73
-*color9:  #9E8D73
+!*.color9: #9E8D73
+!*color9:  #9E8D73
 *.color10: #5B7689
 *color10:  #5B7689
 *.color11: #728C9A
