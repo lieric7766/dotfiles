@@ -14,7 +14,7 @@ UXTerm*cursorColor: #d0dadd
 URxvt*borderColor:  [100]#16161b
 URxvt*scrollBar:    false
 
-
+! font
 URxvt.font: xft:Droid Sans Mono for Powerline:pixelsize=16:antialias=true:hinting=true
 URxvt.boldFont: xft:Droid Sans Mono for Powerline:bold:pixelsize=16:antialias=true:hinting=true
 URxvt.italicFont: xft:Droid Sans Mono for Powerline:italic:pixelsize=16:antialias=true:hinting=true
