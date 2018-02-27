@@ -1,2 +1,3 @@
-#dotfiles
-> hi~ this is my dotfiles :)
+dotfiles
+========
+> hi~ this is my dotfiles
