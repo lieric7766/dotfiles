@@ -14,6 +14,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,8 +34,14 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 syntax on
 color dracula
-" set t_Co=256
+"colorscheme codedark
+"set guifont=Inconsolata\ for\ Powerline\ 20
+"set t_Co=256
+set cindent
+set cursorline
 set nu
 let g:airline_theme='raven'
 let g:airline_powerline_fonts=1
-" set guifont=Mono\ Bold \ 13
+set tabstop=4
+set shiftwidth=4
+
