@@ -74,3 +74,4 @@ XClock*secondColor: rgba:d0/da/dd/ff
 
 ! Set depth to make transparency work.
 URxvt*depth: 32
+!URxvt.transparent: true
