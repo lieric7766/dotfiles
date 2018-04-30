@@ -17,6 +17,8 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'Yggdroot/indentLine'
+Plugin 'unblevable/quick-scope'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,11 +39,11 @@ color dracula
 "colorscheme codedark
 "set guifont=Inconsolata\ for\ Powerline\ 20
 "set t_Co=256
-set cindent
 set cursorline
 set nu
-let g:airline_theme='raven'
-let g:airline_powerline_fonts=1
 set tabstop=4
 set shiftwidth=4
+let g:airline_theme='raven'
+let g:airline_powerline_fonts=1
+let g:qs_highlight_on_keys=['f', 'F']
 
