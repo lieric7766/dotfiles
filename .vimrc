@@ -36,9 +36,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 syntax on
 color dracula
-"colorscheme codedark
-"set guifont=Inconsolata\ for\ Powerline\ 20
-"set t_Co=256
 set cursorline
 set nu
 set tabstop=4
@@ -47,3 +44,17 @@ let g:airline_theme='raven'
 let g:airline_powerline_fonts=1
 let g:qs_highlight_on_keys=['f', 'F']
 
+" Nerd Tree toggling
+map <C-b> :NERDTreeToggle<CR>
+
+" move between buffers
+map <C-Left> <Esc>:bprev<CR>
+map <C-Right> <Esc>:bnext<CR>
+
+" move lines up and down
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
