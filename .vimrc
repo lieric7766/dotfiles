@@ -13,12 +13,14 @@ Plugin 'dracula/vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'Yggdroot/indentLine'
 Plugin 'unblevable/quick-scope'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-dispatch'
+" Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,6 +38,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 syntax on
 color dracula
+set bg=dark
 set cursorline
 set nu
 set tabstop=4
@@ -47,10 +50,6 @@ let g:qs_highlight_on_keys=['f', 'F']
 " Nerd Tree toggling
 map <C-b> :NERDTreeToggle<CR>
 
-" move between buffers
-map <C-Left> <Esc>:bprev<CR>
-map <C-Right> <Esc>:bnext<CR>
-
 " move lines up and down
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -58,3 +57,9 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" set dispatch map 
+autocmd FileType python let b:dispatch = 'python %'
+nnoremap <F5> :Dispatch<CR>
+nnoremap <F6> :cclose<CR>
+
