@@ -62,4 +62,5 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 autocmd FileType python let b:dispatch = 'python %'
 nnoremap <F5> :Dispatch<CR>
 nnoremap <F6> :cclose<CR>
+nnoremap <F8> :Focus gcc % -o %< <CR>
 
