@@ -36,6 +36,11 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" vim 8 plugin
+packadd termdebug
+
+" my normal setting
 syntax on
 color dracula
 set bg=dark
@@ -46,6 +51,7 @@ set shiftwidth=4
 let g:airline_theme='raven'
 let g:airline_powerline_fonts=1
 let g:qs_highlight_on_keys=['f', 'F']
+let g:ycm_global_ycm_extra_conf = '/home/lieric7766/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 " Nerd Tree toggling
 map <C-b> :NERDTreeToggle<CR>
@@ -63,6 +69,12 @@ autocmd FileType python let b:dispatch = 'python %'
 nnoremap <F5> :Dispatch<CR>
 nnoremap <F6> :cclose<CR>
 nnoremap <F8> :Focus gcc % -o %< -g<CR>
+
+" if vim 8.1
+nnoremap <F2> :Termdebug<CR>
+
+" use zsh
+nnoremap <C-z> :term zsh<CR>
 
 " move between buffers
 map Oc <C-Right>
