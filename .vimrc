@@ -62,5 +62,11 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 autocmd FileType python let b:dispatch = 'python %'
 nnoremap <F5> :Dispatch<CR>
 nnoremap <F6> :cclose<CR>
-nnoremap <F8> :Focus gcc % -o %< <CR>
+nnoremap <F8> :Focus gcc % -o %< -g<CR>
 
+" move between buffers
+map Oc <C-Right>
+map Od <C-Left>
+
+map <C-Left> <ESC>:bprev<CR>
+map <C-Right> <ESC>:bnext<CR>
