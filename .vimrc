@@ -52,6 +52,7 @@ let g:airline_theme='raven'
 let g:airline_powerline_fonts=1
 let g:qs_highlight_on_keys=['f', 'F']
 let g:ycm_global_ycm_extra_conf = '/home/lieric7766/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let mapleader=","
 
 " Nerd Tree toggling
 map <C-b> :NERDTreeToggle<CR>
@@ -74,7 +75,7 @@ nnoremap <F8> :Focus gcc % -o %< -g<CR>
 nnoremap <F2> :Termdebug<CR>
 
 " use zsh
-nnoremap <C-z> :term zsh<CR>
+nnoremap <leader>z :term zsh<CR>
 
 " move between buffers
 map Oc <C-Right>
@@ -82,3 +83,8 @@ map Od <C-Left>
 
 map <C-Left> <ESC>:bprev<CR>
 map <C-Right> <ESC>:bnext<CR>
+
+" format json
+nnoremap <leader>j :%!python -m json.tool<CR>
+inoremap <leader>j <Esc>:%!python -m json.tool<CR>
+
