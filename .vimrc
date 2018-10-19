@@ -20,6 +20,8 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'unblevable/quick-scope'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
+Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
+Plugin 'hdima/python-syntax'
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
@@ -41,13 +43,14 @@ filetype plugin indent on    " required
 packadd termdebug
 
 " my normal setting
+" color dracula
 syntax on
-color dracula
 set cursorline
 set nu
 set tabstop=4
 set shiftwidth=4
 set bg=dark
+set encoding=utf8
 let g:airline_theme='raven'
 let g:airline_powerline_fonts=1
 let g:qs_highlight_on_keys=['f', 'F']
