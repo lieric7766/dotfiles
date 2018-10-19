@@ -1,5 +1,5 @@
-set nocompatible              " be iMproved, required
 filetype off                  " required
+set nocompatible              " be iMproved, required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -43,15 +43,15 @@ packadd termdebug
 " my normal setting
 syntax on
 color dracula
-set bg=dark
 set cursorline
 set nu
 set tabstop=4
 set shiftwidth=4
+set term=rxvt-unicode-256color
 let g:airline_theme='raven'
 let g:airline_powerline_fonts=1
 let g:qs_highlight_on_keys=['f', 'F']
-let g:ycm_global_ycm_extra_conf = '/home/lieric7766/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='/home/lieric7766/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let mapleader=","
 
 " Nerd Tree toggling
