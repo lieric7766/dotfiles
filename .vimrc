@@ -47,7 +47,7 @@ set cursorline
 set nu
 set tabstop=4
 set shiftwidth=4
-set term=rxvt-unicode-256color
+set bg=dark
 let g:airline_theme='raven'
 let g:airline_powerline_fonts=1
 let g:qs_highlight_on_keys=['f', 'F']
