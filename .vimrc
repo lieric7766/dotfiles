@@ -22,6 +22,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
 Plugin 'hdima/python-syntax'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
@@ -43,7 +44,6 @@ filetype plugin indent on    " required
 packadd termdebug
 
 " my normal setting
-" color dracula
 syntax on
 set cursorline
 set nu
