@@ -10,6 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dracula/vim'
+Plugin 'chriskempson/base16-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
@@ -23,6 +24,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
 Plugin 'hdima/python-syntax'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'takac/vim-hardtime'
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
@@ -45,20 +47,27 @@ packadd termdebug
 
 " my normal setting
 syntax on
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-default-dark
 set cursorline
 set nu
 set tabstop=4
 set shiftwidth=4
 set bg=dark
 set encoding=utf8
+set hlsearch
 let g:airline_theme='raven'
 let g:airline_powerline_fonts=1
 let g:qs_highlight_on_keys=['f', 'F']
 let g:ycm_global_ycm_extra_conf='/home/lieric7766/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" let g:hardtime_default_on=1
 let mapleader=","
 
 " Nerd Tree toggling
-map <C-b> :NERDTreeToggle<CR>
+nnoremap <F1> :NERDTreeToggle<CR>
+
+" tag bar open 
+nnoremap <F3> :TagbarOpen<CR>
 
 " move lines up and down
 nnoremap <C-j> :m .+1<CR>==
