@@ -100,3 +100,6 @@ map <C-Right> <ESC>:bnext<CR>
 nnoremap <leader>j :%!python -m json.tool<CR>
 inoremap <leader>j <Esc>:%!python -m json.tool<CR>
 
+" insert newline without entering insert mode
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
