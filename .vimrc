@@ -25,6 +25,8 @@ Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
 Plugin 'hdima/python-syntax'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'takac/vim-hardtime'
+Plugin 'SirVer/ultisnips'
+Plugin 'dkprice/vim-easygrep'
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
@@ -60,8 +62,13 @@ let g:airline_theme='raven'
 let g:airline_powerline_fonts=1
 let g:qs_highlight_on_keys=['f', 'F']
 let g:ycm_global_ycm_extra_conf='/home/lieric7766/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion=1
 " let g:hardtime_default_on=1
+"
 let mapleader=","
+
+" YCM go to define
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Nerd Tree toggling
 nnoremap <F1> :NERDTreeToggle<CR>
