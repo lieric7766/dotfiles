@@ -27,6 +27,10 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'takac/vim-hardtime'
 Plugin 'SirVer/ultisnips'
 Plugin 'dkprice/vim-easygrep'
+Plugin 'wellle/targets.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'gabesoft/vim-ags'
+Plugin 'kshenoy/vim-signature'
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
