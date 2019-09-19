@@ -32,6 +32,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'gabesoft/vim-ags'
 Plugin 'kshenoy/vim-signature'
 Plugin 'mindriot101/vim-yapf'
+Plugin 'easymotion/vim-easymotion'
+
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
