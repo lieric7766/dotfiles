@@ -90,13 +90,14 @@ nnoremap <F1> :NERDTreeToggle<CR>
 " tag bar open 
 nnoremap <F3> :TagbarOpen<CR>
 
+" maybe i will remove in the future
 " move lines up and down
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+" nnoremap <C-j> :m .+1<CR>==
+" nnoremap <C-k> :m .-2<CR>==
+" inoremap <C-j> <Esc>:m .+1<CR>==gi
+" inoremap <C-k> <Esc>:m .-2<CR>==gi
+" vnoremap <C-j> :m '>+1<CR>gv=gv
+" vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " set dispatch map 
 autocmd FileType python let b:dispatch = 'python %'
@@ -110,12 +111,13 @@ nnoremap <F2> :Termdebug<CR>
 " use zsh
 nnoremap <leader>z :term zsh<CR>
 
+" maybe i will remove in the future
 " move between buffers
-map Oc <C-Right>
-map Od <C-Left>
-
-map <C-Left> <ESC>:bprev<CR>
-map <C-Right> <ESC>:bnext<CR>
+" map Oc <C-Right>
+" map Od <C-Left>
+" 
+" map <C-Left> <ESC>:bprev<CR>
+" map <C-Right> <ESC>:bnext<CR>
 
 " format json
 nnoremap <leader>j :%!python -m json.tool<CR>
@@ -127,4 +129,3 @@ inoremap <leader>j <Esc>:%!python -m json.tool<CR>
 " insert newline without entering insert mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
-
