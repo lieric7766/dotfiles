@@ -28,12 +28,11 @@ Plugin 'takac/vim-hardtime'
 Plugin 'SirVer/ultisnips'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'wellle/targets.vim'
-Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-multiple-cursors'
 Plugin 'gabesoft/vim-ags'
 Plugin 'kshenoy/vim-signature'
 Plugin 'mindriot101/vim-yapf'
 Plugin 'easymotion/vim-easymotion'
-
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
@@ -131,3 +130,11 @@ inoremap <leader>j <Esc>:%!python -m json.tool<CR>
 " insert newline without entering insert mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+
+" macro over visual range
+function! ExecuteMacroOverVisualRange()
+	echo "@".getcmdline()
+	execute ":'<,'>normal @".nr2char(getchar())
+endfunction
