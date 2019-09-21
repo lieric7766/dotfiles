@@ -131,9 +131,8 @@ inoremap <leader>j <Esc>:%!python -m json.tool<CR>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
-
 " macro over visual range
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 function! ExecuteMacroOverVisualRange()
 	echo "@".getcmdline()
 	execute ":'<,'>normal @".nr2char(getchar())
