@@ -28,7 +28,7 @@ Plugin 'takac/vim-hardtime'
 Plugin 'SirVer/ultisnips'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'wellle/targets.vim'
-" Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'gabesoft/vim-ags'
 Plugin 'kshenoy/vim-signature'
 Plugin 'mindriot101/vim-yapf'
@@ -121,15 +121,23 @@ nnoremap <leader>z :term zsh<CR>
 " map <C-Right> <ESC>:bnext<CR>
 
 " format json
-nnoremap <leader>j :%!python -m json.tool<CR>
-inoremap <leader>j <Esc>:%!python -m json.tool<CR>
+nnoremap <leader>fj :%!python -m json.tool<CR>
+inoremap <leader>fj <Esc>:%!python -m json.tool<CR>
 
 " search and replace the word under cursor
-:nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+" move more smooth
+nmap <leader>w 5w
+nmap <leader>b 5b
 
 " insert newline without entering insert mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+" mac system clipboard
+inoremap <C-v> <ESC>"+pa
+vnoremap <C-c> "+y
 
 " macro over visual range
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
