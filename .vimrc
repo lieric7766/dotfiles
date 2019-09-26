@@ -29,7 +29,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'wellle/targets.vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'gabesoft/vim-ags'
+Plugin 'mileszs/ack.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'mindriot101/vim-yapf'
 Plugin 'easymotion/vim-easymotion'
@@ -77,6 +77,7 @@ let Powerline_symbols='fancy'
 let g:qs_highlight_on_keys=['f', 'F']
 let g:ycm_global_ycm_extra_conf='/Users/lishihong/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ackprg = 'ag --nogroup --nocolor --column'
 " let g:hardtime_default_on=1
 
 " my custom settings
@@ -145,3 +146,16 @@ function! ExecuteMacroOverVisualRange()
 	echo "@".getcmdline()
 	execute ":'<,'>normal @".nr2char(getchar())
 endfunction
+
+" cnoreabbrev ag Gcd <bar> Ack!
+" let ack can find all from git root
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+function! Find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
+
