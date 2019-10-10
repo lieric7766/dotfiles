@@ -33,6 +33,10 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'mindriot101/vim-yapf'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'junegunn/vim-peekaboo'
+Plugin 'reedes/vim-colors-pencil'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'jiangmiao/auto-pairs'
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
@@ -58,22 +62,25 @@ syntax on
 " set termguicolors
 " let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-default-dark
+"
 color dracula
+" colorscheme pencil
+colorscheme PaperColor
 set cursorline
 set nu
 set tabstop=4
 set shiftwidth=4
-set bg=dark
+" set bg=dark
+set bg=light
 set hlsearch
 set encoding=utf-8
-let g:airline_theme='raven'
-let g:airline_powerline_fonts=1
-" let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-" let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:Powerline_symbols='fancy'
-let Powerline_symbols='fancy'
+" let g:airline_theme='raven'
+let g:airline_theme='papercolor'
+" let g:airline_powerline_fonts=1
+" let g:airline_left_alt_sep = '⮁'
+" let g:airline_right_alt_sep = '⮃'
+" let g:Powerline_symbols='fancy'
+" let Powerline_symbols='fancy'
 let g:qs_highlight_on_keys=['f', 'F']
 let g:ycm_global_ycm_extra_conf='/Users/lishihong/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -128,6 +135,9 @@ inoremap <leader>fj <Esc>:%!python -m json.tool<CR>
 " search and replace the word under cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+" search by visual select
+vnoremap // y/<C-R>"<CR>
+
 " move more smooth
 nmap <leader>w 5w
 nmap <leader>b 5b
@@ -158,4 +168,10 @@ function! Find_git_root()
 endfunction
 
 command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
+
+" exclude quickfix in buffer list
+augroup qf
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
 
