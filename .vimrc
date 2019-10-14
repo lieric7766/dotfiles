@@ -37,6 +37,7 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/ctrlp.vim'
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
@@ -70,8 +71,8 @@ set cursorline
 set nu
 set tabstop=4
 set shiftwidth=4
-" set bg=dark
-set bg=light
+set bg=dark
+" set bg=light
 set hlsearch
 set encoding=utf-8
 " let g:airline_theme='raven'
