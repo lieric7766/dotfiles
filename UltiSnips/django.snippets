@@ -1,9 +1,32 @@
 snippet get "add get swagger template" b
-@swagger_auto_schema(
-	operation_description= '',
-	manual_parameters=[openapi.Parameter('', openapi.IN_QUERY, description='', type=openapi.TYPE_INTEGER)],
-	tags=['data wiki frontend'])
-def get(self, request):
-	param = request.query_params.get('')
-	return Response([], status=status.HTTP_200_OK)
+	@swagger_auto_schema(
+		operation_description= '',
+		manual_parameters=[
+			openapi.Parameter('', 
+						openapi.IN_QUERY,
+						description='',
+						type=openapi.TYPE_INTEGER
+						)
+		],
+		tags=['']
+	)
+	def get(self, request):
+		param = request.query_params.get('')
+		return Response([], status=status.HTTP_200_OK)
+endsnippet
+
+snippet post "add post swagger template" b
+	@swagger_auto_schema(
+		operation_description='',
+		tags=[''],
+		request_body=openapi.Schema(
+			type=openapi.TYPE_OBJECT,
+			required=[''],
+			properties={
+				'': openapi.Schema(type=openapi.TYPE_INTEGER, description=''),
+			}
+		)
+	)
+	def post_table_subscribe(self, request):
+	param = request.data.get('')
 endsnippet
