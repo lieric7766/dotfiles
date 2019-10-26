@@ -27,6 +27,6 @@ snippet post "add post swagger template" b
 			}
 		)
 	)
-	def post_table_subscribe(self, request):
-	param = request.data.get('')
+	def post(self, request):
+		param = request.data.get('')
 endsnippet
