@@ -1,0 +1,9 @@
+snippet get "add get swagger template" b
+@swagger_auto_schema(
+	operation_description= '',
+	manual_parameters=[openapi.Parameter('', openapi.IN_QUERY, description='', type=openapi.TYPE_INTEGER)],
+	tags=['data wiki frontend'])
+def get(self, request):
+	param = request.query_params.get('')
+	return Response([], status=status.HTTP_200_OK)
+endsnippet

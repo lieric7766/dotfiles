@@ -38,6 +38,7 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
+" Plugin 'ervandew/supertab'
 " Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
@@ -64,7 +65,7 @@ syntax on
 " let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-default-dark
 "
-color dracula
+" color dracula
 " colorscheme pencil
 colorscheme PaperColor
 set cursorline
@@ -91,8 +92,21 @@ let g:ycm_autoclose_preview_window_after_completion=1
 " my custom settings
 let mapleader=","
 
+" ctrlp setting
+" let g:AutoPairsShortcutFastWrap=1
+
+" indent setting
+let g:indentLine_setColors = 0
+
+" snip setting
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+let g:UltiSnipsExpandTrigger="<C-j>"
+autocmd FileType python UltiSnipsAddFiletypes django
+
 " YCM go to define
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_use_ultisnips_completer=1
+
 
 " Nerd Tree toggling
 nnoremap <F1> :NERDTreeToggle<CR>
@@ -138,10 +152,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " search by visual select
 vnoremap // y/<C-R>"<CR>
-
-" move more smooth
-nmap <leader>w 5w
-nmap <leader>b 5b
 
 " insert newline without entering insert mode
 nmap <S-Enter> O<Esc>
