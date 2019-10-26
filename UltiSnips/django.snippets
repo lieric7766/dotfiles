@@ -1,32 +1,49 @@
 snippet get "add get swagger template" b
-	@swagger_auto_schema(
-		operation_description= '',
-		manual_parameters=[
-			openapi.Parameter('', 
-						openapi.IN_QUERY,
-						description='',
-						type=openapi.TYPE_INTEGER
-						)
-		],
-		tags=['']
-	)
-	def get(self, request):
-		param = request.query_params.get('')
-		return Response([], status=status.HTTP_200_OK)
+@swagger_auto_schema(
+	operation_description= '',
+	manual_parameters=[
+		openapi.Parameter('', 
+					openapi.IN_QUERY,
+					description='',
+					type=openapi.TYPE_INTEGER
+					)
+	],
+	tags=['']
+)
+def get(self, request):
+	param = request.query_params.get('')
+	return Response([], status=status.HTTP_200_OK)
 endsnippet
 
 snippet post "add post swagger template" b
-	@swagger_auto_schema(
-		operation_description='',
-		tags=[''],
-		request_body=openapi.Schema(
-			type=openapi.TYPE_OBJECT,
-			required=[''],
-			properties={
-				'': openapi.Schema(type=openapi.TYPE_INTEGER, description=''),
-			}
-		)
+@swagger_auto_schema(
+	operation_description='',
+	tags=[''],
+	request_body=openapi.Schema(
+		type=openapi.TYPE_OBJECT,
+		required=[''],
+		properties={
+			'': openapi.Schema(type=openapi.TYPE_INTEGER, description=''),
+		}
 	)
-	def post(self, request):
-		param = request.data.get('')
+)
+def post(self, request):
+	param = request.data.get('')
+endsnippet
+
+snippet 4 "add 400 status response"
+return Response( 
+			{ 
+				'status': status.HTTP_400_BAD_REQUEST, 
+				'msg': '' 
+			}, 
+			status=status.HTTP_400_BAD_REQUEST)
+endsnippet
+
+snippet 2 "add 200 status response"
+return Response({
+	'status': status.HTTP_200_OK,
+	'msg': 'success'
+},
+			status=status.HTTP_200_OK)
 endsnippet
