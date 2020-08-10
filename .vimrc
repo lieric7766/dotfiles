@@ -21,6 +21,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'unblevable/quick-scope'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
 Plugin 'hdima/python-syntax'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
@@ -38,6 +39,10 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
+Plugin 'chrisbra/NrrwRgn'
+" Plugin 'chaoren/vim-wordmotion'
+Plugin 'dominikduda/vim_current_word'
+" Plugin 'yuttie/comfortable-motion.vim'
 " Plugin 'ervandew/supertab'
 " Plugin 'davidhalter/jedi-vim'
 
@@ -68,16 +73,19 @@ syntax on
 " color dracula
 " colorscheme pencil
 colorscheme PaperColor
+" colorscheme gruvbox
 set cursorline
+set showcmd
 set nu
 set tabstop=4
 set shiftwidth=4
-set bg=dark
-" set bg=light
+" set bg=dark
+set bg=light
 set hlsearch
 set encoding=utf-8
 " let g:airline_theme='raven'
 let g:airline_theme='papercolor'
+" let g:airline_theme='gruvbox'
 " let g:airline_powerline_fonts=1
 " let g:airline_left_alt_sep = '⮁'
 " let g:airline_right_alt_sep = '⮃'
