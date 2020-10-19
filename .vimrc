@@ -11,8 +11,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dracula/vim'
 Plugin 'chriskempson/base16-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
@@ -45,6 +45,13 @@ Plugin 'dominikduda/vim_current_word'
 " Plugin 'yuttie/comfortable-motion.vim'
 " Plugin 'ervandew/supertab'
 " Plugin 'davidhalter/jedi-vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'narajaon/onestatus'
+" Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'liuchengxu/vim-which-key' 
+Plugin 'itchyny/lightline.vim' 
+Plugin 'mhinz/vim-startify'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -72,6 +79,7 @@ syntax on
 "
 " color dracula
 " colorscheme pencil
+set bg=dark
 colorscheme PaperColor
 " colorscheme gruvbox
 set cursorline
@@ -80,11 +88,12 @@ set nu
 set tabstop=4
 set shiftwidth=4
 " set bg=dark
-set bg=light
 set hlsearch
 set encoding=utf-8
 " let g:airline_theme='raven'
-let g:airline_theme='papercolor'
+" let g:airline_theme='papercolor' 
+let g:lightline = { 'colorscheme': 'PaperColor'  }
+set laststatus=2
 " let g:airline_theme='gruvbox'
 " let g:airline_powerline_fonts=1
 " let g:airline_left_alt_sep = '⮁'
@@ -142,6 +151,9 @@ nnoremap <F2> :Termdebug<CR>
 
 " use zsh
 nnoremap <leader>z :term zsh<CR>
+
+" which key config
+nnoremap <silent> <leader> :WhichKey ','<CR>
 
 " maybe i will remove in the future
 " move between buffers
