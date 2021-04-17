@@ -2,7 +2,14 @@ filetype off                  " required
 set nocompatible              " be iMproved, required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+if has('nvim')
+    let s:editor_root=expand("~/.config/nvim")
+    set rtp+=~/.config/nvim/bundle/Vundle.vim
+else
+    let s:editor_root=expand("~/.vim")
+    set rtp+=~/.vim/bundle/Vundle.vim
+endif
+call vundle#rc(s:editor_root . '/bundle')
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -49,9 +56,15 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'narajaon/onestatus'
 " Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'liuchengxu/vim-which-key' 
-Plugin 'itchyny/lightline.vim' 
+Plugin 'liuchengxu/vim-which-key'
+Plugin 'itchyny/lightline.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-line'
+Plugin 'TaDaa/vimade'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'voldikss/vim-floaterm'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,7 +92,7 @@ syntax on
 "
 " color dracula
 " colorscheme pencil
-set bg=dark
+set bg=light
 colorscheme PaperColor
 " colorscheme gruvbox
 set cursorline
@@ -91,7 +104,7 @@ set shiftwidth=4
 set hlsearch
 set encoding=utf-8
 " let g:airline_theme='raven'
-" let g:airline_theme='papercolor' 
+" let g:airline_theme='papercolor'
 let g:lightline = { 'colorscheme': 'PaperColor'  }
 set laststatus=2
 " let g:airline_theme='gruvbox'
@@ -108,6 +121,22 @@ let g:ycm_autoclose_preview_window_after_completion=1
 
 " my custom settings
 let mapleader=","
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Space>j <Plug>(easymotion-j)
+map <Space>k <Plug>(easymotion-k)
 
 " ctrlp setting
 " let g:AutoPairsShortcutFastWrap=1
@@ -128,7 +157,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Nerd Tree toggling
 nnoremap <F1> :NERDTreeToggle<CR>
 
-" tag bar open 
+" tag bar open
 nnoremap <F3> :TagbarOpen<CR>
 
 " maybe i will remove in the future
@@ -140,7 +169,7 @@ nnoremap <F3> :TagbarOpen<CR>
 " vnoremap <C-j> :m '>+1<CR>gv=gv
 " vnoremap <C-k> :m '<-2<CR>gv=gv
 
-" set dispatch map 
+" set dispatch map
 autocmd FileType python let b:dispatch = 'python %'
 nnoremap <F5> :Dispatch<CR>
 nnoremap <F6> :cclose<CR>
@@ -159,7 +188,7 @@ nnoremap <silent> <leader> :WhichKey ','<CR>
 " move between buffers
 " map Oc <C-Right>
 " map Od <C-Left>
-" 
+"
 " map <C-Left> <ESC>:bprev<CR>
 " map <C-Right> <ESC>:bnext<CR>
 
