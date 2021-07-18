@@ -21,7 +21,7 @@ Plugin 'chriskempson/base16-vim'
 " Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'Yggdroot/indentLine'
@@ -37,6 +37,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'wellle/targets.vim'
 Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'mg979/vim-visual-multi'
 Plugin 'mileszs/ack.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'mindriot101/vim-yapf'
@@ -65,6 +66,8 @@ Plugin 'kana/vim-textobj-line'
 Plugin 'TaDaa/vimade'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'voldikss/vim-floaterm'
+Plugin 'neoclide/coc.nvim'
+Plugin 'luochen1990/rainbow'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,7 +95,7 @@ syntax on
 "
 " color dracula
 " colorscheme pencil
-set bg=light
+set bg=dark
 colorscheme PaperColor
 " colorscheme gruvbox
 set cursorline
@@ -114,14 +117,18 @@ set laststatus=2
 " let g:Powerline_symbols='fancy'
 " let Powerline_symbols='fancy'
 let g:qs_highlight_on_keys=['f', 'F']
-let g:ycm_global_ycm_extra_conf='/Users/lishihong/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_global_ycm_extra_conf='/Users/lishihong/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf='/Users/lishihong/.config/nvim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_python_binary_path='/Users/lishihong/.pyenv/shims/python'
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 " let g:hardtime_default_on=1
 
 " my custom settings
 let mapleader=","
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
@@ -235,3 +242,17 @@ augroup qf
     autocmd FileType qf set nobuflisted
 augroup END
 
+" coc config
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
