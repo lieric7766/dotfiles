@@ -1,103 +1,113 @@
 filetype off                  " required
+
 set nocompatible              " be iMproved, required
 
-" set the runtime path to include Vundle and initialize
-if has('nvim')
-    let s:editor_root=expand("~/.config/nvim")
-    set rtp+=~/.config/nvim/bundle/Vundle.vim
-else
-    let s:editor_root=expand("~/.vim")
-    set rtp+=~/.vim/bundle/Vundle.vim
-endif
-call vundle#rc(s:editor_root . '/bundle')
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'dracula/vim'
-Plugin 'chriskempson/base16-vim'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
-Plugin 'tomasiser/vim-code-dark'
-Plugin 'Yggdroot/indentLine'
-Plugin 'unblevable/quick-scope'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
-Plugin 'hdima/python-syntax'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'takac/vim-hardtime'
-Plugin 'SirVer/ultisnips'
-Plugin 'dkprice/vim-easygrep'
-Plugin 'wellle/targets.vim'
-Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'mg979/vim-visual-multi'
-Plugin 'mileszs/ack.vim'
-Plugin 'kshenoy/vim-signature'
-Plugin 'mindriot101/vim-yapf'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'junegunn/vim-peekaboo'
-Plugin 'reedes/vim-colors-pencil'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'chrisbra/NrrwRgn'
-" Plugin 'chaoren/vim-wordmotion'
-Plugin 'dominikduda/vim_current_word'
-" Plugin 'yuttie/comfortable-motion.vim'
-" Plugin 'ervandew/supertab'
-" Plugin 'davidhalter/jedi-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-" Plugin 'narajaon/onestatus'
-" Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'liuchengxu/vim-which-key'
-Plugin 'itchyny/lightline.vim'
-Plugin 'mhinz/vim-startify'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-line'
-Plugin 'TaDaa/vimade'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'voldikss/vim-floaterm'
-Plugin 'neoclide/coc.nvim'
-Plugin 'luochen1990/rainbow'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.config/nvim/plugged')
+Plug 'dracula/vim'
+Plug 'chriskempson/base16-vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'majutsushi/tagbar'
+Plug 'tomasiser/vim-code-dark'
+" Plug 'Yggdroot/indentLine'
+Plug 'unblevable/quick-scope'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/Txtfmt-The-Vim-Highlighter'
+Plug 'hdima/python-syntax'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'takac/vim-hardtime'
+Plug 'SirVer/ultisnips'
+Plug 'dkprice/vim-easygrep'
+Plug 'wellle/targets.vim'
+Plug 'terryma/vim-multiple-cursors'
+"Plug 'mg979/vim-visual-multi'
+Plug 'mileszs/ack.vim'
+Plug 'kshenoy/vim-signature'
+Plug 'mindriot101/vim-yapf'
+Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/vim-peekaboo'
+Plug 'reedes/vim-colors-pencil'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'jiangmiao/auto-pairs'
+Plug 'kien/ctrlp.vim'
+Plug 'chrisbra/NrrwRgn'
+" Plug 'chaoren/vim-wordmotion'
+Plug 'dominikduda/vim_current_word'
+" Plug 'yuttie/comfortable-motion.vim'
+" Plug 'ervandew/supertab'
+" Plug 'davidhalter/jedi-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'christoomey/vim-tmux-navigator'
+" Plug 'narajaon/onestatus'
+" Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'liuchengxu/vim-which-key'
+" Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startify'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+" Plug 'TaDaa/vimade'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'voldikss/vim-floaterm'
+" Plug 'neoclide/coc.nvim'
+" Plug 'luochen1990/rainbow'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'shaunsingh/moonlight.nvim'
+Plug 'marko-cerovac/material.nvim'
+Plug 'hoob3rt/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/todo-comments.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lewis6991/spellsitter.nvim'
+Plug 'mhartington/oceanic-next'
+Plug 'f-person/git-blame.nvim'
+Plug 'projekt0n/github-nvim-theme'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'ryanoasis/vim-devicons'
+" Plug 'romgrk/barbar.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
+Plug 'hrsh7th/nvim-compe'
+Plug 'onsails/lspkind-nvim'
+" Initialize plugin system
+call plug#end()
 
 " vim 8 plugin
 packadd termdebug
 
 " my normal setting
 syntax on
-" set termguicolors
+set termguicolors
 " let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-default-dark
 "
 " color dracula
 " colorscheme pencil
-set bg=dark
-colorscheme PaperColor
+let g:material_style = 'oceanic'
+" let g:material_italic_keywords = v:true
+" let g:material_italic_functions = v:true
+let g:material_italic_comments = v:true
+" let g:material_italic_variables= v:true
+colorscheme material
+" colorscheme moonlight
+" colorscheme PaperColor
 " colorscheme gruvbox
+" Theme
+" syntax enable
+" for vim 7
+" set t_Co=256
+ set completeopt=menuone,noselect
 set cursorline
 set showcmd
 set nu
@@ -108,7 +118,8 @@ set hlsearch
 set encoding=utf-8
 " let g:airline_theme='raven'
 " let g:airline_theme='papercolor'
-let g:lightline = { 'colorscheme': 'PaperColor'  }
+" let g:lightline = { 'colorscheme': 'PaperColor'  }
+" let g:lightline = { 'colorscheme': 'material'  }
 set laststatus=2
 " let g:airline_theme='gruvbox'
 " let g:airline_powerline_fonts=1
@@ -128,7 +139,7 @@ let g:qs_highlight_on_keys=['f', 'F']
 let mapleader=","
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+" let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
@@ -149,7 +160,12 @@ map <Space>k <Plug>(easymotion-k)
 " let g:AutoPairsShortcutFastWrap=1
 
 " indent setting
-let g:indentLine_setColors = 0
+" let g:indentLine_setColors = 0
+let g:indentLine_char = '|'
+let g:indent_blankline_show_current_context = 1
+let g:indent_blankline_show_trailing_blankline_indent = 0
+let g:indent_blankline_context_patterns = ['class', 'def', 'if', 'if_statement', 'while', 'for', 'with', 'try', 'block']
+
 
 " snip setting
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
@@ -157,7 +173,7 @@ let g:UltiSnipsExpandTrigger="<C-j>"
 autocmd FileType python UltiSnipsAddFiletypes django
 
 " YCM go to define
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "let g:ycm_use_ultisnips_completer=1
 
 
@@ -246,13 +262,196 @@ augroup END
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" tree sitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+    max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
+  },
+  indent = {
+    enable = true
+  }
+}
+EOF
+
+" lualine setting
+lua <<EOF
+require('lualine').setup {
+  options = {
+    -- ... your lualine config
+    theme = 'material-nvim'
+    -- ... your lualine config
+  }
+}
+EOF
+
+" todo comment  settings
+lua << EOF
+  require("todo-comments").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
+
+" lua <<EOF
+" require('spellsitter').setup()
+" EOF
+
+" Example config in VimScript
+" lua << EOF
+" require("github-theme").setup({
+" })
+" EOF
+" telescope
+"" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" lsp install
+lua <<EOF
+require'lspinstall'.setup() -- important
+
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{}
+end
+EOF
+
+" nvim-compe
+"
+lua << EOF
+-- Compe setup
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 1;
+  preselect = 'enable';
+  throttle_time = 80;
+  source_timeout = 200;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = true;
+
+  source = {
+    path = true;
+    nvim_lsp = true;
+  };
+}
+
+local t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+local check_back_space = function()
+    local col = vim.fn.col('.') - 1
+    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        return true
+    else
+        return false
+    end
+end
+
+-- Use (s-)tab to:
+--- move to prev/next item in completion menuone
+--- jump to prev/net snippet's placeholder
+_G.tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-n>"
+  elseif check_back_space() then
+    return t "<Tab>"
+  else
+    return vim.fn['compe#complete']()
+  end
+end
+_G.s_tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-p>"
+  else
+    return t "<S-Tab>"
+  end
+end
+
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+--This line is important for auto-import
+vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<cr>")', { expr = true })
+vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
+EOF
+" lspkind
+lua <<EOF
+require('lspkind').init({
+    -- enables text annotations
+    --
+    -- default: true
+    with_text = true,
+
+    -- default symbol map
+    -- can be either 'default' or
+    -- 'codicons' for codicon preset (requires vscode-codicons font installed)
+    --
+    -- default: 'default'
+    preset = 'codicons',
+
+    -- override preset symbols
+    --
+    -- default: {}
+    symbol_map = {
+      Text = "",
+      Method = "",
+      Function = "",
+      Constructor = "",
+      Field = "ﰠ",
+      Variable = "",
+      Class = "ﴯ",
+      Interface = "",
+      Module = "",
+      Property = "ﰠ",
+      Unit = "塞",
+      Value = "",
+      Enum = "",
+      Keyword = "",
+      Snippet = "",
+      Color = "",
+      File = "",
+      Reference = "",
+      Folder = "",
+      EnumMember = "",
+      Constant = "",
+      Struct = "פּ",
+      Event = "",
+      Operator = "",
+      TypeParameter = ""
+    },
+})
+EOF
