@@ -27,7 +27,7 @@ else
                     indent = {
                         enable = true
                     },
-                    ensure_installed = { "help", "javascript", "typescript", "c", "lua", "python" },
+                    ensure_installed = { "help", "javascript", "typescript", "c", "lua", "python", "rust", "go" },
 
                     -- Install parsers synchronously (only applied to `ensure_installed`)
                     sync_install = false,
@@ -274,6 +274,27 @@ else
         },
         {
           "mbbill/undotree"
+        },
+        {
+          "folke/trouble.nvim",
+          dependencies = { "nvim-tree/nvim-web-devicons" },
+          opts = {
+           -- your configuration comes here
+           -- or leave it empty to use the default settings
+           -- refer to the configuration section below
+          }
+        },
+        {
+          "chipsenkbeil/distant.nvim",
+          branch = 'v0.3',
+          config = function()
+              require('distant'):setup()
+          end
+        },
+        {
+            "ThePrimeagen/harpoon",
+            branch = "harpoon2",
+            dependencies = { "nvim-lua/plenary.nvim" }
         }
         -- {
         --     "aserowy/tmux.nvim",
@@ -333,6 +354,23 @@ else
     require("ibl").setup { scope = { highlight = highlight } }
 
     hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+    local harpoon = require("harpoon")
+
+    -- REQUIRED
+    harpoon:setup()
+    -- REQUIRED
+
+    vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
+    vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+    vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+    vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
+    vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
+    vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
+
+    -- Toggle previous & next buffers stored within Harpoon list
+    vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+    vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 
     -- vim.o.background = "light"
     vim.opt.termguicolors = true
